@@ -1,6 +1,6 @@
 # Document-Based Question Answering System
 
-A high-performance, web-based QA application designed to process technical documentation (PDF, TXT, DOCX) and provide evidence-based answers using Semantic Search.
+A high-performance, web-based Q&A application designed to process technical documentation (PDF, TXT, DOCX) and provide evidence-based answers using Semantic Search.
 
 ## 🚀 Features
 - **Multi-Format Support:** Upload and parse PDF, Word, and Text files.
@@ -11,32 +11,40 @@ A high-performance, web-based QA application designed to process technical docum
 ## 🛠️ Installation & Setup
 
 1. **Clone or Extract the Project Folder:**
-    cd qa_system
+    ```bash
+    cd document-based-qa-system
+    ```
 
-2. ***Create a Virtual Environment (Optional but Recommended):***
+2. **Create a Virtual Environment (Optional but Recommended):**
+    ```bash
     python -m venv venv
     source venv/bin/activate
+    ```
 
-3. ***Install Dependencies:***
+3. **Install Dependencies:**
+    ```bash
     pip install -r requirements.txt
+    ```
 
-4. ***Run the Application:***
+4. **Run the Application:**
+    ```bash
     streamlit run app.py
+    ```
 
 ## 📖 How to Use
-***Load Knowledge:*** Use the sidebar to upload your technical manuals or paste text directly.
+**Load Knowledge:** Use the sidebar to upload your technical manuals or paste text directly.
 
-***Analyze:*** Once the "Processed successfully" message appears, enter your question in the main text field.
+**Analyze:** Once the "Processed successfully" message appears, enter your question in the main text field.
 
-***Review:*** Examine the extracted answer, check the confidence score, and expand the "Source Context" to see the surrounding sentences.
+**Review:** Examine the extracted answer, check the confidence score, and expand the "Source Context" to see the surrounding sentences.
 
 ## 🏗️ System Architecture
 The system follows a standard Retrieval pipeline:
 
-***Parsing:*** Documents are converted into clean text strings.
+- **Parsing:** Documents are converted into clean text strings.
 
-***Chunking:*** Text is split into meaningful sentence-level segments.
+- **Chunking:** Text is split into meaningful sentence-level segments.
 
-***Embedding:*** Segments are converted into high-dimensional vectors.
+- **Embedding:** Segments are converted into high-dimensional vectors.
 
-***Scoring:*** The user's query is compared against document vectors using Cosine Similarity.
+- **Scoring:** The user's query is compared against document vectors using Cosine Similarity.
