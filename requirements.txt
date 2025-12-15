@@ -1,5 +1,5 @@
 # Web Framework and UI
-streamlit==1.31.0
+streamlit==1.52.0
 
 # Document Parsing
 PyPDF2==3.0.1
