@@ -49,39 +49,40 @@ doc_qa_app/
 * A Google Account (to get the free API key)
 
 **Step 1: Clone or Extract the Project Folder:**
-    ```bash
-    cd document-based-qa-system
-    ```
+```bash
+cd document-based-qa-system
+```
 
 **Step 2: Create a Virtual Environment (Optional but Recommended):**
-    ```bash
-    python -m venv venv
-    # Windows
-    venv\Scripts\activate
-    # Mac/Linux
-    source venv/bin/activate
-    ```
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
+```
 
 **Step 3: Install Dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+```bash
+pip install -r requirements.txt
+```
 
 **Step 4: Set Up Environment Variables**
 * Create a file named .env in the root directory and add your Google Gemini API Key.
 * Get a key from Google AI Studio.
 * Add it to .env:
 
-5. **Run the Application:**
+**Step 5: Run the Application:**
 
 **Terminal 1: Start the Backend API**
-    ```bash
-    python backend.py
-    ```
+```bash
+python backend.py
+```
+
 **Terminal 2: Start the Frontend UI**
-    ```bash
-    streamlit run frontend.py
-    ```
+```bash
+streamlit run frontend.py
+```
 
 ## 📖 Usage Guide
 
