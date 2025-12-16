@@ -1,14 +1,20 @@
-# Web Framework and UI
-streamlit==1.52.0
+# --- Backend Server ---
+fastapi>=0.110.0
+uvicorn>=0.29.0
+python-multipart>=0.0.9
 
-# Document Parsing
-PyPDF2==3.0.1
-python-docx==1.1.0
+# --- Frontend ---
+streamlit>=1.32.0
+requests>=2.31.0
 
-# Natural Language Processing & Embeddings
-sentence-transformers==2.3.1
-torch==2.2.0
-numpy==1.26.4
+# --- Free AI Stack ---
+langchain>=0.1.16
+langchain-community>=0.0.33
+langchain-google-genai>=1.0.1
+sentence-transformers>=2.6.0
+chromadb>=0.4.24
 
-# Utility
-pandas==2.2.0
+# --- Document Processing ---
+pypdf>=4.2.0
+python-docx>=1.1.0
+python-dotenv>=1.0.1

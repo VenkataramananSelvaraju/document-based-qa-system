@@ -1,50 +1,100 @@
-# Document-Based Question Answering System
+# 📄 Document-Based Question Answering System
 
-A high-performance, web-based Q&A application designed to process technical documentation (PDF, TXT, DOCX) and provide evidence-based answers using Semantic Search.
+A robust, Retrieval-Augmented Generation (RAG) application that allows users to chat with their documents (PDF, DOCX, TXT). 
+
+Built with **FastAPI** (Backend) and **Streamlit** (Frontend), this system leverages **Google Gemini Flash** for reasoning and **HuggingFace Local Embeddings** for vector search and embeddings.
+
+---
 
 ## 🚀 Features
-- **Multi-Format Support:** Upload and parse PDF, Word, and Text files.
-- **Semantic Retrieval:** Uses the `all-MiniLM-L6-v2` transformer model for high-accuracy matching.
-- **Transparency:** Displays confidence scores and provides the exact source paragraph for verification.
-- **Hybrid Input:** Support for both file uploads and direct text copy-pasting.
 
-## 🛠️ Installation & Setup
+* **Multi-Document Support:** Upload and index multiple PDF, DOCX, or TXT files simultaneously.
+* **Tech Stack:**
+    * **LLM:** Google Gemini Flash (via Google AI Studio).
+    * **Embeddings:** HuggingFace `all-MiniLM-L6-v2` (Running locally on CPU).
+* **Interactive Chat UI:** Streamlit-based chat interface supporting follow-up questions.
+* **Real-Time Confidence Scoring:** displays the "Confidence Score" (vector similarity) for the top source.
+* **Source Citation:** Accurate referencing of the exact document source and excerpt used to generate the answer.
+* **Decoupled Architecture:** Separate Frontend (Streamlit) and Backend (FastAPI) for scalability.
 
-1. **Clone or Extract the Project Folder:**
-    ```bash
-    cd document-based-qa-system
-    ```
+---
 
-2. **Create a Virtual Environment (Optional but Recommended):**
-    ```bash
-    python -m venv venv
-    source venv/bin/activate
-    ```
+## 🛠️ Tech Stack
 
-3. **Install Dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+* **Backend:** FastAPI, Uvicorn
+* **Frontend:** Streamlit
+* **Orchestration:** LangChain
+* **Vector Database:** ChromaDB (Persistent Local Storage)
+* **AI Models:** * *Generation:* Google Gemini Flash
+    * *Embedding:* Sentence-Transformers (HuggingFace)
 
-4. **Run the Application:**
-    ```bash
-    streamlit run app.py
-    ```
+---
 
-## 📖 How to Use
-**Load Knowledge:** Use the sidebar to upload your technical manuals or paste text directly.
+## 📂 Project Structure
 
-**Analyze:** Once the "Processed successfully" message appears, enter your question in the main text field.
+```text
+doc_qa_app/
+├── backend.py           # FastAPI server (Logic & API endpoints)
+├── frontend.py          # Streamlit UI (Chat interface)
+├── requirements.txt     # Python dependencies
+├── .env                 # API Keys (Not committed to repo)
+├── chroma_db_free/      # Local Vector Store (Auto-generated)
+└── uploads/             # Temp storage for uploaded files
+```
 
-**Review:** Examine the extracted answer, check the confidence score, and expand the "Source Context" to see the surrounding sentences.
+## ⚙️ Installation & Setup
 
-## 🏗️ System Architecture
-The system follows a standard Retrieval pipeline:
+**Prerequisites**
+* Python 3.9 or higher
+* A Google Account (to get the free API key)
 
-- **Parsing:** Documents are converted into clean text strings.
+**Step 1: Clone or Extract the Project Folder:**
+```bash
+cd document-based-qa-system
+```
 
-- **Chunking:** Text is split into meaningful sentence-level segments.
+**Step 2: Create a Virtual Environment (Optional but Recommended):**
+```bash
+python -m venv venv
+# Windows
+venv\Scripts\activate
+# Mac/Linux
+source venv/bin/activate
+```
 
-- **Embedding:** Segments are converted into high-dimensional vectors.
+**Step 3: Install Dependencies:**
+```bash
+pip install -r requirements.txt
+```
 
-- **Scoring:** The user's query is compared against document vectors using Cosine Similarity.
+**Step 4: Set Up Environment Variables**
+* Create a file named .env in the root directory and add your Google Gemini API Key.
+* Get a key from Google AI Studio.
+* Add it to .env:
+
+**Step 5: Run the Application:**
+
+**Terminal 1: Start the Backend API**
+```bash
+python backend.py
+```
+
+**Terminal 2: Start the Frontend UI**
+```bash
+streamlit run frontend.py
+```
+
+## 📖 Usage Guide
+
+1. Build Knowledge Base:
+    * Open the sidebar on the left.
+    * Click "Browse files" to select PDF or DOCX documents.
+    * Click "Update Knowledge Base".
+    * Wait for the success message (this builds the vector index locally).
+
+2. Ask Questions:
+    * Type your question in the chat input box (e.g., "What are the safety protocols?").
+    * The AI will answer based only on your documents.
+
+3. View Sources:
+    * Expand the "🔍 Top Source" box below the answer to see the exact text chunk and the confidence score (Green/Orange/Red based on relevance).
