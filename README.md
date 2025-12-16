@@ -40,6 +40,7 @@ doc_qa_app/
 ├── .env                 # API Keys (Not committed to repo)
 ├── chroma_db_free/      # Local Vector Store (Auto-generated)
 └── uploads/             # Temp storage for uploaded files
+```
 
 ## ⚙️ Installation & Setup
 
@@ -66,7 +67,7 @@ doc_qa_app/
     pip install -r requirements.txt
     ```
 
-4. Set Up Environment Variables
+4. **Set Up Environment Variables**
 * Create a file named .env in the root directory and add your Google Gemini API Key.
 * Get a key from Google AI Studio.
 * Add it to .env:
