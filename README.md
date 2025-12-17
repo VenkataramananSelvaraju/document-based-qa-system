@@ -1,3 +1,11 @@
+# Group No: 73
+**Group Member Names:**
+* DEEPESH PARMAR (2024AA05053) 100%
+* PRAJAPATI HEMANG KEYURBHAI (2024AA05058) 100%
+* SATISH KUMAR PATHAK (2024AA05578) 100%
+* V. NIKITHA (2024AA05552) 100%
+* VENKATARAMANAN S (2024AA05555) 100%
+
 # 📄 Document-Based Question Answering System
 
 A robust, Retrieval-Augmented Generation (RAG) application that allows users to chat with their documents (PDF, DOCX, TXT). 
