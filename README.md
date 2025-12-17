@@ -78,7 +78,10 @@ pip install -r requirements.txt
 **Step 4: Set Up Environment Variables**
 * Create a file named .env in the root directory and add your Google Gemini API Key.
 * Get a key from Google AI Studio.
-* Add it to .env:
+* Add it to .env
+```bash
+GOOGLE_API_KEY=<YOUR_API_KEY>
+```
 
 **Step 5: Run the Application:**
 
